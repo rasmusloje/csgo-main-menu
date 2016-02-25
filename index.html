@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSGOMainMenu</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#" class="underline">
+                        CSGOMainMenu
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Create Main Menu</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+            <div class="bottomtwit">
+                <a href="http://steamcommunity.com/id/chazeftw/" target="_blank"><i class="fa fa-steam-square fa-3x steam"></i></a>
+                <a href="https://www.reddit.com/user/chazeftw/" target="_blank"><i class="fa fa-reddit fa-3x reddit"></i></a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-times"></i> Toggle Menu</a>
+                        <h1>Customize your CS:GO Main Menu</h1>
+                        <p>The csgo_english.txt file can be found:</p>
+                        <input id="path" style="width: 615px;" styletype="text" class="form-control" placeholder="\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\resource\csgo_english.txt">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 borderz">
+                        <h2>Input</h2>
+                        <h3>Play</h3>
+                        <div class="input-group input-fields">
+                          <span id="playText"></span>
+                          <input id="playInputText" type="text" class="form-control" placeholder="Text" aria-describedby="playText">
+                        </div>
+                        <br>
+                        <div class="input-group input-fields">
+                          <span class="input-group-addon" id="playColour">#</span>
+                          <input id="playInputColor" type="text" class="form-control" placeholder="Hex color" aria-describedby="playColor">
+                        </div>
+                        
+                        <h3>Inventory</h3>
+                        <div class="input-group input-fields">
+                          <span id="inventoryText"></span>
+                          <input id= "inventoryInputText" type="text" class="form-control" placeholder="Text" aria-describedby="inventoryText">
+                        </div>
+                        <br>
+                        <div class="input-group input-fields">
+                          <span class="input-group-addon" id="inventoryColor">#</span>
+                          <input id="inventoryInputColor" type="text" class="form-control" placeholder="Hex color" aria-describedby="inventoryColor">
+                        </div>
+                        
+                        <h3>Watch</h3>
+                        <div class="input-group input-fields">
+                          <span id="watchText"></span>
+                          <input id="watchInputText" type="text" class="form-control" placeholder="Text" aria-describedby="watchText">
+                        </div>
+                        <br>
+                        <div class="input-group input-fields">
+                          <span class="input-group-addon" id="watchColor">#</span>
+                          <input id="watchInputColor" type="text" class="form-control" placeholder="Hex color" aria-describedby="watchColor">
+                        </div>
+                        
+                        <h3>Awards</h3>
+                        <div class="input-group input-fields">
+                          <span id="awardsText"></span>
+                          <input id="awardsInputText" type="text" class="form-control" placeholder="Text" aria-describedby="awardsText">
+                        </div>
+                        <br>
+                        <div class="input-group input-fields">
+                          <span class="input-group-addon" id="awardsColor">#</span>
+                          <input id="awardsInputColor" type="text" class="form-control" placeholder="Hex color" aria-describedby="awardsColor">
+                        </div>
+                        
+                        <h3>Options</h3>
+                        <div class="input-group input-fields">
+                          <span id="optionsText"></span>
+                          <input id="optionsInputText" type="text" class="form-control" placeholder="Text" aria-describedby="optionsText">
+                        </div>
+                        <br>
+                        <div class="input-group input-fields">
+                          <span class="input-group-addon" id="optionsColor">#</span>
+                          <input id="optionsInputColor" type="text" class="form-control" placeholder="Hex color" aria-describedby="optionsColor">
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 borderz">
+                        <h2>Output</h2>
+                        <h3>Play</h3>
+                        <p>Replace with line 8554 in csgo_english.txt or search for: SFUI_MainMenu_PlayButton</p>
+                        <div class="input-group output-fields">
+                          <input type="text" class="form-control" placeholder="Text" id="playFormatted">
+                        </div>
+                        <h3>Inventory</h3>
+                        <p>Replace with line 8555 in csgo_english.txt  or search for: SFUI_MainMenu_Inventory</p>
+                        <div class="input-group output-fields">
+                          <input type="text" class="form-control" placeholder="Text" id="inventoryFormatted">
+                        </div>
+                        <h3>Watch</h3>
+                        <p>Replace with line 8556 in csgo_english.txt  or search for: SFUI_MainMenu_Watch</p>
+                        <div class="input-group output-fields">
+                          <input type="text" class="form-control" placeholder="Text" id="watchFormatted">
+                        </div>
+                        <h3>Awards</h3>
+                        <p>Replace with line 8573 in csgo_english.txt  or search for: SFUI_MainMenu_My_Awards</p>
+                        <div class="input-group output-fields">
+                          <input type="text" class="form-control" placeholder="Text" id="awardsFormatted">
+                        </div>
+                        <h3>Options</h3>
+                        <p>Replace with line 8565 in csgo_english.txt  or search for: SFUI_MainMenu_HelpButton</p>
+                        <div class="input-group output-fields">
+                          <input type="text" class="form-control" placeholder="Text" id="optionsFormatted">
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-default" id="generate">Generate</button>
+                    </div>
+                    
+                    <div class="col-lg-4 borderz">
+                        <h2>F.A.Q</h2>
+                        <h4>Will I get banned for this?</h4>
+                        <p>No.</p>
+                        <h4>What happens on game updates?</h4>
+                        <p>The file will be reset and if other weapons or items are added, it might not be the lines stated that is those to be replaced. Therefore search after the keyword given.</p>
+                        <h4>Should I backup the txt file before editing?</h4>
+                        <p>That's a good idea but if everything goes wrong you can always verify integrity of game cache:<br>Library > CS:GO > Right Click > Properties > Local Files > Verify dat shiet</p>
+                        <h2>Example</h2>
+                        <a href="http://imgur.com/u5srEdG" target="_blank">Imgur link</a>
+                        <h2>Credit</h2>
+                        <p>(25/2-2016)<br>All credit, regarding the idea of this, goes to some guy on Reddit/GlobalOffensive that posted how he noticed you could manipulate menu titles.<br>I haven't been able to find the post again. But kudos to you! Will update this credit message when I find your post and username etc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        
+        document.getElementById("playFormatted").setAttribute("readonly", "true");
+        document.getElementById("inventoryFormatted").setAttribute("readonly", "true");
+        document.getElementById("watchFormatted").setAttribute("readonly", "true");
+        document.getElementById("awardsFormatted").setAttribute("readonly", "true");
+        document.getElementById("optionsFormatted").setAttribute("readonly", "true");
+        document.getElementById("path").setAttribute("readonly", "true");
+        
+        $("#generate").click(function(e) {
+            var playInputText = document.getElementById("playInputText").value;
+            var playInputColor = document.getElementById("playInputColor").value;
+            var inventoryInputText = document.getElementById("inventoryInputText").value;
+            var inventoryInputColor = document.getElementById("inventoryInputColor").value;
+            var watchInputText = document.getElementById("watchInputText").value;
+            var watchInputColor = document.getElementById("watchInputColor").value;
+            var awardsInputText = document.getElementById("awardsInputText").value;
+            var awardsInputColor = document.getElementById("awardsInputColor").value;
+            var optionsInputText = document.getElementById("optionsInputText").value;
+            var optionsInputColor = document.getElementById("optionsInputColor").value;
+            
+            
+            document.getElementById("playFormatted").value = '\t\t"SFUI_MainMenu_PlayButton"\t\t\t"<font color=#'+playInputColor+'>'+playInputText+'</font>"';
+            document.getElementById("inventoryFormatted").value = '\t\t"SFUI_MainMenu_Inventory"\t\t\t"<font color=#'+inventoryInputColor+'>'+inventoryInputText+'</font>"';
+            document.getElementById("watchFormatted").value = '\t\t"SFUI_MainMenu_Watch"\t\t\t"<font color=#'+watchInputColor+'>'+watchInputText+'</font>"';
+            document.getElementById("awardsFormatted").value = '\t\t"SFUI_MainMenu_My_Awards"\t\t\t"<font color=#'+awardsInputColor+'>'+awardsInputText+'</font>"';
+            document.getElementById("optionsFormatted").value = '\t\t"SFUI_MainMenu_HelpButton"\t\t\t"<font color=#'+optionsInputColor+'>'+optionsInputText+'</font>"';
+        });
+    </script>
+
+</body>
+
+</html>
